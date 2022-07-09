@@ -21,6 +21,7 @@ test_that("example", {
   expect_print(ggtable(tips, "smoker", c("day", "time", "sex"), fill = "std.resid", legend = 1))
   expect_print(ggtable(tips, "smoker", c("day", "time", "sex"), fill = "resid", legend = 1))
 
+  skip_if_not_installed("Hmisc")
   # if continuous variables are provided, just displaying some summary statistics
   expect_print(ggtable(tips, c("smoker", "total_bill"), c("day", "time", "sex", "tip")))
 
